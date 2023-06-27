@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Invoice DashBoard</title>
+    <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon">
+    <!-- styles sheets -->
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+   
+    <!-- modal -->
+    <div id="modal">
+      <img class="close" src="./images/close.svg"  alt="" srcset="">
+      <h1></h1>
+      <div id="modalContent">
+        <form action="http://localhost:8080/Summer_Internship_Backend/add-invoice" method="POST" style="justify-content: center;"><div id="leftform-section"><div style="display: flex; justify-content: space-between;"><label style="margin-right: 10px;">Customer Name</label><input type="text" name="Customer Name" required="true" id="customername"></div><div style="display: flex; justify-content: space-between;"><label style="margin-right: 10px;">Customer No.</label><input type="text" name="Customer No." required="true" id="customernumber"></div><div style="display: flex; justify-content: space-between;"><label style="margin-right: 10px;">Invoice No.</label><input type="text" name="Invoice No." required="true" id="invoicenumber"></div><div style="display: flex; justify-content: space-between;"><label style="margin-right: 10px;">Invoice Amount</label><input type="text" name="Invoice Amount" required="true" id="invoiceamount"></div></div><div id="rightform-section"><div style="display: flex; justify-content: space-between;"><label style="margin-right: 10px;">Due Date</label><input type="date" name="Due Date" required="true" id="date"></div><div style="display: flex; justify-content: space-between;"><label style="margin-right: 10px;">Notes</label><textarea cols="10" type="text" name="Notes" required="true" id="notes" style="height: 9em;"></textarea></div></div><div id="bottomform-section"><button class="no-border-button" type="button">Cancel</button><div><button type="reset" class="tool-button danger">Clear</button><button type="submit" class="tool-button">Add</button></div></div></form>
+      </div>
+      </div>
+    <!-- end modal -->
+    <section class="grid-container">
+      <!-- dashboard header -->
+      <div class="grid-item">
+        <img src="./images/logo2.svg" alt="companylogodescreptive" />
+        <img src="./images/logo.svg" alt="companylogo" />
+        <p>Invoice List</p>
+      </div>
+      <!-- dashboard main content -->
+      <div class="grid-item">
+        <!-- inoice dashboard toolkit -->
+        <div id="invoice-toolkit">
+          <button class="tool-button" id="add"><img src="./images/add.svg" width="10px" height="12px" alt="addbutton" style="margin:0 5px 0 0;">Add</button
+          ><button type="button"   class="tool-button" id="edit"><img src="./images/edit.svg" width="10px" height="12px" alt="addbutton" style="margin:0 5px 0 0;">Edit</button
+          ><button type="button"   class="tool-button danger" id="remove"><img src="./images/subtract.svg" width="10px" height="12px" alt="addbutton" style="margin:0 5px 0 0;" >Delete</button>
+          <div 
+          id="searchbox"
+          name="searchbox"
+          >
+            <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="search by invoice number"
+            />
+            <img id="searchIcon" src="./images/search.svg"></img>
+          </div>
+          </div>
+          <!-- invoice table -->
+          <div id="tableContainer">
+            <table id="invoice-table">
+            <thead>
+              <tr>
+                <th  id="selectall"><svg value="all" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><defs><style>.a{fill:none;}.b{fill:#97a1a9;}</style></defs><path class="a" d="M0,0H24V24H0Z"/><path class="b" d="M19,5V19H5V5H19m0-2H5A2.006,2.006,0,0,0,3,5V19a2.006,2.006,0,0,0,2,2H19a2.006,2.006,0,0,0,2-2V5A2.006,2.006,0,0,0,19,3Z"/></svg></th>
+                <th>Customer Name</th>
+                <th>Customer #</th>
+                <th>Invoice #</th>
+                <th>Invoice Amount</th>
+                <th>Due Date</th>
+                <th>Predicted Payment Date</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </body>
+    <!-- js -->
+    <script src="./index.js"></script>
+    <script src="./fetch.json"></script>
+</html>
